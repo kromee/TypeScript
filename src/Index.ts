@@ -192,10 +192,73 @@ const fn5:any = null
 console.log(fn5?.())
 
 // type assertions (AS) o (<>) para cuando se conoce el tipo
-const input = document.getElementById('username') as HTMLAnchorElement
-input.innerHTML= "value"
+//const input = document.getElementById('username') as HTMLAnchorElement
+//input.innerHTML= "value"
 
-const input1 = <HTMLAnchorElement>document.getElementById('username')  
-input.innerHTML= "value"
+////const input1 = <HTMLAnchorElement> document.getElementById('username')  
+//input1.innerHTML= "value"
 
 
+
+
+
+
+//Programación orientada a objetos 
+
+class Personaje {
+   //readonly id:number // no se puede modificar la propiedad, solo en el constructor
+   // name: string
+   // nivel: number
+   // hp: number
+    profesion?: string // propiedad opcional
+   private static  equipo: number=0
+
+
+    constructor(
+        public readonly id:number, 
+        public name:string, 
+        public nivel:number, 
+        public _hp:number)
+    {
+
+    this.id = id
+    this.name = name
+    this.nivel = nivel
+    this._hp = _hp
+    }
+
+    get hp():number{
+        return this._hp
+    }
+    set hp(cantidad:number){
+        this._hp = cantidad
+    }
+    
+    static getEquipo():number{
+        return Personaje.equipo
+    }
+
+
+    subirNivel ():number{
+        return this.nivel ++
+    }
+    cambiarHP(cantidad:number):number{
+        this._hp = this._hp+cantidad
+        return this._hp
+    }
+   static agregarPersonaje():void{
+        Personaje.equipo++
+    }
+
+}
+
+const personaje = new Personaje(1,"Eduardo",2,100 )
+console.log(personaje)
+console.log(personaje.subirNivel())
+console.log(personaje.cambiarHP(10))
+
+
+const personaje1 = new Personaje(1,"Eduardo",4,110 )
+Personaje.agregarPersonaje();
+Personaje.agregarPersonaje();
+console.log(Personaje.getEquipo())

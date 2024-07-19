@@ -103,4 +103,44 @@ const arra1 = null;
 console.log(arra1 === null || arra1 === void 0 ? void 0 : arra1[0]);
 const fn5 = null;
 console.log(fn5 === null || fn5 === void 0 ? void 0 : fn5());
+class Personaje {
+    constructor(id, name, nivel, _hp) {
+        this.id = id;
+        this.name = name;
+        this.nivel = nivel;
+        this._hp = _hp;
+        this.id = id;
+        this.name = name;
+        this.nivel = nivel;
+        this._hp = _hp;
+    }
+    get hp() {
+        return this._hp;
+    }
+    set hp(cantidad) {
+        this._hp = cantidad;
+    }
+    static getEquipo() {
+        return Personaje.equipo;
+    }
+    subirNivel() {
+        return this.nivel++;
+    }
+    cambiarHP(cantidad) {
+        this._hp = this._hp + cantidad;
+        return this._hp;
+    }
+    static agregarPersonaje() {
+        Personaje.equipo++;
+    }
+}
+Personaje.equipo = 0;
+const personaje = new Personaje(1, "Eduardo", 2, 100);
+console.log(personaje);
+console.log(personaje.subirNivel());
+console.log(personaje.cambiarHP(10));
+const personaje1 = new Personaje(1, "Eduardo", 4, 110);
+Personaje.agregarPersonaje();
+Personaje.agregarPersonaje();
+console.log(Personaje.getEquipo());
 //# sourceMappingURL=Index.js.map
