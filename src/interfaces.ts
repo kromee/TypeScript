@@ -41,6 +41,7 @@ class DiccionarioUsuario{
 let diccionarioUsuarios = new DiccionarioUsuario()
 diccionarioUsuarios['a1'] = "Usuario 1"
 diccionarioUsuarios['1a'] = "Usuario 2"
+diccionarioUsuarios['a3'] = "Usuario 3"
 
 console.log(diccionarioUsuarios)
 
