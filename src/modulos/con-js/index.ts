@@ -1,6 +1,6 @@
 import { holaMundo } from './saludos'
 
-holaMundo("","")
+holaMundo("Mensaje","Mensaje 1"); 
 
 
 

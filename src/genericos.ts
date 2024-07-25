@@ -125,7 +125,7 @@ const calendar: Calendar= {
     id: 1, fuente: 'google', dueno: 'yo mero'
 }
 
-function getProp<T>(objeto: T, property: keyof T):unknown
+function getProp<T>(objeto: T, property:keyof T):unknown
 {
     return objeto[property];
 }
@@ -133,8 +133,8 @@ function getProp<T>(objeto: T, property: keyof T):unknown
 getProp<Calendar>(calendar, 'id');
 getProp<Calendar>(calendar, 'fuente');
 
-//con typeof se limita a buscas solo por el tipo
-getProp<Calendar>(calendar, 'otracosa');
+//con typeof se limita a buscar solo por el tipo
+getProp<Calendar>(calendar, 'dueno');
 
 
 
@@ -171,4 +171,4 @@ const readOnly: Readonly<Punto>={
 }
 
 //marca error el compilador
-readOnly.x=2
+//readOnly.x=2
