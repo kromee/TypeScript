@@ -96,7 +96,7 @@ class Users{
 const usuario = new Users("Hola", "Mundo", '123456')
 console.log(usuario.password);
 
-//composicion de los decoradores, orden de ejecución de los decoradores
+//composicion de los decoradores, orden de ejecución de los decoradores, de abajo para arriba.
 function Dec1 (constructor: Function){
     console.log('Decorador 1 ' +  constructor);
 }
